@@ -1,0 +1,23 @@
+{
+  "name": "vue-sfc-rollup",
+  "version": "1.0.0",
+  "description": "",
+  "author": {
+    "name": "Jelle"
+  },
+  "main": "dist/lib.umd.js",
+  "module": "dist/lib.esm.js",
+  "unpkg": "dist/lib.min.js",
+  "scripts": {
+    "start": "npx browser-sync .",
+    "build": "npm run build:browser && npm run build:es && npm run build:umd",
+    "build:browser": "npx rollup --config rollup.config.js --format iife --file dist/lib.min.js",
+    "build:es": "npx rollup --config rollup.config.js --format es --file dist/lib.esm.js",
+    "build:umd": "npx rollup --config rollup.config.js --format umd --file dist/lib.umd.js"
+  },
+  "devDependencies": {
+    "rollup-plugin-vue": "^5.1.6",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
